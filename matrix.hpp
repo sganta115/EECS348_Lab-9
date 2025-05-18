@@ -13,6 +13,7 @@ private:
     std::vector<std::vector<T>> matrix;
 
 public:
+    Matrix() : matrix(0){}
     Matrix(std::size_t N); //empty matrix constructor
     Matrix(std::vector<std::vector<T>> nums); //matrix with values constructor
 
@@ -29,6 +30,9 @@ public:
     
 
 };
+
+template <typename T>
+std::pair<Matrix<T>,Matrix<T>> create_matrices(std::string file_name);
 
 
 #endif // __MATRIX_HPP__

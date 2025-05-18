@@ -1,6 +1,8 @@
 #include "matrix.hpp"
 #include <fstream>
 
+
+
 template <typename T>
 Matrix<T>::Matrix(size_t N) : matrix(N, std::vector<int>(N,0)) {
     // initializes member variable matrix with N vectors consisting of N 0's
@@ -15,7 +17,7 @@ Matrix<T>::Matrix(std::vector<std::vector<T>> nums) : matrix(nums){ //initialize
 
 template <typename T>
 //addition overloading operator
-Matrix<T> Matrix<T>::operator+(const Matrix &rhs) const{
+Matrix<T> Matrix<T>::operator+(const Matrix<T> &rhs) const{
     Matrix result(matrix.size());
     for (size_t i = 0; i < matrix.size(); i++) {
         for (size_t j = 0; j < matrix[i].size(); j++) {
@@ -27,7 +29,7 @@ Matrix<T> Matrix<T>::operator+(const Matrix &rhs) const{
 
 template <typename T>
 //multiplication overloading operator
-Matrix<T> Matrix<T>::operator*(const Matrix &rhs) const{
+Matrix<T> Matrix<T>::operator*(const Matrix<T> &rhs) const{
     size_t N = matrix.size();
     Matrix<T> result(matrix.size());
     for (size_t i = 0; i < N; i++) {
